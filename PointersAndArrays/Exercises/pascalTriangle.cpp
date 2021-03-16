@@ -3,30 +3,30 @@
 using namespace std; 
 
 void printPascalTr(int size){
-  int i, j;
+   int PascalTr[size][size];
+    int row,col;
+    //assign zero to every array element
+    for(row=0; row<size; row++)
+        for(col=0; col<size; col++)  PascalTr[row][col]=0;
+    //first and second rows are set to 1s
+    PascalTr[0][0]=1;
+    PascalTr[1][0]=1;
+    PascalTr[1][1]=1;
 
-  int grid[size][size];
-
-  for(i = 0; i < size; i++){
-
-    for(j = 0; j < size; j++){
-      if(j == 0){
-        grid[i][j] = 1; 
-      }
-      else if(i == 1 && j == 1){
-        grid[i][j] = 1;
-      }
-      else if(i >= 2 && j == 1){
-        grid[i][j] = i;
-      }
-      else{
-        grid[i][j] = 0;
-      }
-      cout << grid[i][j] << " ";
-
+    for(row=2; row<size; row++) {
+        PascalTr[row][0]=1;
+        for(col=1; col<=row; col++) {
+            PascalTr[row][col]=PascalTr[row-1][col-1]+PascalTr[row-1][col];
+        }
     }
-    cout << endl; 
-  }
+
+    //display the Pascal Triangle
+    for(row=0; row<size; row++) {
+        for(col=0; col<=row; col++) {
+            cout <<PascalTr[row][col]<<" ";
+        }
+        cout<<endl;
+    }
 
 
 }
