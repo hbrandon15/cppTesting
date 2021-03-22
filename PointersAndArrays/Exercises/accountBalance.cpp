@@ -35,6 +35,8 @@ int main(){
   cout << "Value of pointer is "<<*ptr << endl; cout << "Value of balance is: " << balance << endl; // notice how both values are the same. 
   deposit(ptr, 2000);
 
+  
+
 
 
 
