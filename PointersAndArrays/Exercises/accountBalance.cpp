@@ -19,7 +19,11 @@ void withdraw(double* balance, double amount){
 void deposit(double* balance, double amount){
   // perform deposit
   // no special checks are needed. 
+  cout << "You have initiated a deposit of " << amount << endl; 
+  cout << "Depositing funds..." << endl; 
   *balance = *balance + amount; 
+  cout << "New balance is: " << *balance;
+
 
 }
 int main(){
@@ -28,8 +32,9 @@ int main(){
   double *ptr = &balance;
  
   withdraw(ptr, 500);
-  cout << *ptr << endl; cout << balance; // notice how both values are the same. 
-  deposit()
+  cout << "Value of pointer is "<<*ptr << endl; cout << "Value of balance is: " << balance << endl; // notice how both values are the same. 
+  deposit(ptr, 2000);
+
 
 
 
