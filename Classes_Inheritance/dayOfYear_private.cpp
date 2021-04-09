@@ -46,7 +46,18 @@ int main(){
 
 // Function definitions
 
-void DayOfYear::output()
+void DayOfYear::output()  // notice how we are also declaring this function called "output" to be part of the class DayOfYear
 {
-  
+  // In our output function we are going to display the set month and day
+  cout << "month = " << month
+    << ", day = " << day << endl; // notice how we are using the variables month and day which are associated with our class. 
+}
+
+void DayOfYear::set(int new_month, int new_day) // this will be our set function 
+{
+  month = new_month; // sets private variable month equal to the passed arguement "new_month"
+  day = new_day; 
+  check_date(); // Here we are calling check_date function to see if the month and date entered are valid
+  // it is also important 
+
 }
